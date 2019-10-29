@@ -59,3 +59,25 @@ def encode(label):
     # else it is night and can stay 0
 
     return numerical_val
+
+# using both functions above, standardize the input images and output labels
+def standardize(image_list):
+
+    # Empty image data array
+    standard_list = []
+
+    # Iterate through all the image-label pairs
+    for item in image_list:
+        image = item[0]
+        label = item[1]
+
+        # Standardize the image
+        standardized_im = standardize_input(image)
+
+        # Create a numerical label
+        binary_label = encode(label)
+
+        # Append the image, and it's one hot encoded label to the full, processed list of image data
+        standard_list.append((standardized_im, binary_label))
+
+    return standard_list
