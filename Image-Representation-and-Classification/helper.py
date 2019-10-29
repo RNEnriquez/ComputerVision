@@ -48,3 +48,14 @@ def standardize_input(image):
     standard_im = cv2.resize(image, (1100, 600))
 
     return standard_im
+# Examples:
+# encode("day") should return: 1
+# encode("night") should return: 0
+def encode(label):
+
+    numerical_val = 0
+    if(label == 'day'):
+        numerical_val = 1
+    # else it is night and can stay 0
+
+    return numerical_val
