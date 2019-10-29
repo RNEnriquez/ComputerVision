@@ -31,3 +31,20 @@ def load_dataset(image_dir):
                 im_list.append((im, im_type))
 
     return im_list
+
+## Standardize the input images
+# Resize each image to the desired input size: 600x1100px (hxw).
+
+## Standardize the output
+# With each loaded image, we also specify the expected output.
+# For this, we use binary numerical values 0/1 = night/day.
+
+
+# This function should take in an RGB image and return a new, standardized version
+# 600 height x 1100 width image size (px x px)
+def standardize_input(image):
+
+    # Resize image and pre-process so that all "standard" images are the same size
+    standard_im = cv2.resize(image, (1100, 600))
+
+    return standard_im
